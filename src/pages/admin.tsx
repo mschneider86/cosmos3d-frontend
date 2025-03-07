@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import axiosInstance from '../api/axiosInstance';
 
 interface Parameter {
@@ -64,12 +63,14 @@ const Admin = () => {
   };
 
   return (
-    <div className='min-h-screen p-6 bg-gray-50'>
-      <h2 className='text-2xl font-bold mb-4'>
+    <div className='min-h-screen p-6 bg-gray-200'>
+      <h2 className='text-2xl font-bold mb-4 text-gray-400'>
         Painel Administrativo - Cosmos 3D
       </h2>
       <div className='mb-6'>
-        <h3 className='text-xl font-semibold mb-2'>Criar Novo Parâmetro</h3>
+        <h3 className='text-xl font-semibold mb-2 text-gray-400'>
+          Criar Novo Parâmetro
+        </h3>
         <form onSubmit={handleCreate} className='flex space-x-2'>
           <input
             type='text'
@@ -98,10 +99,15 @@ const Admin = () => {
         </form>
       </div>
       <div>
-        <h3 className='text-xl font-semibold mb-2'>Parâmetros Existentes</h3>
+        <h3 className='text-xl font-semibold mb-2 text-gray-400'>
+          Parâmetros Existentes
+        </h3>
         <ul>
           {parameters.map((param) => (
-            <li key={param.id} className='mb-2 flex items-center space-x-2'>
+            <li
+              key={param.id}
+              className='mb-2 flex items-center space-x-2 text-gray-400'
+            >
               <span>
                 {param.name}: {param.value}
               </span>
